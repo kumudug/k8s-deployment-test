@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: first-app-declarative
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+       app: first-app-declarative
+  template:
+    metadata:
+      labels:
+        app: first-app-declarative
+    spec: 
+      containers:
+        - name: declarative-node
+          image: kumudug/kub-first-app
