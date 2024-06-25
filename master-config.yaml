@@ -19,9 +19,12 @@ metadata:
 spec:
   replicas: 1
   selector: 
-    matchLabels:
-       app: first-app-declarative
-       tier: backend
+    # matchLabels:
+    #    app: first-app-declarative
+    #    tier: backend
+    matchExpressions:
+      - { key: app, operator: In, values: [first-app-declarative]}
+      - { key: tier, operator: In, values: [backend]}
   template:
     metadata:
       labels:
