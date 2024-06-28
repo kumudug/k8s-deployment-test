@@ -38,3 +38,9 @@ spec:
       containers:
         - name: declarative-node
           image: kumudug/kub-first-app
+          livenessProbe: 
+            httpGet: 
+              path: /
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 10
